@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@clieko/drizzle": ["libs/drizzle/src/index.ts"],
       "@spartan-ng/ui-button-helm": ["libs/spartan/ui-button-helm/src/index.ts"]
     }
   },
