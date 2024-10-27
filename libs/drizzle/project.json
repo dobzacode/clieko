@@ -9,9 +9,21 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "drizzle-kit generate --config=./src/config.ts",
-        "cwd": "libs/cms-service/database"
+        "cwd": "libs/drizzle"
       }
     },
+    "db:migrate": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "local",
+      "options": {
+        "command": "drizzle-kit migrate --config=./src/config.ts",
+        "cwd": "libs/drizzle"
+      },
+      "configurations": {
+        "local": {}
+      }
+    },
+
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],

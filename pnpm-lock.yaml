@@ -62,12 +62,18 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       drizzle-kit:
         specifier: ^0.26.2
         version: 0.26.2
       drizzle-orm:
         specifier: ^0.35.3
         version: 0.35.3(@libsql/client-wasm@0.14.0)(@types/pg@8.11.10)(pg@8.13.1)(postgres@3.4.5)(react@18.3.1)
+      nx-cloud:
+        specifier: 19.1.0
+        version: 19.1.0
       pg:
         specifier: ^8.13.1
         version: 8.13.1
@@ -219,6 +225,9 @@ importers:
       prettier:
         specifier: ^2.6.2
         version: 2.8.8
+      swc-loader:
+        specifier: ^0.2.6
+        version: 0.2.6(@swc/core@1.5.29(@swc/helpers@0.5.13))(webpack@5.95.0(@swc/core@1.5.29(@swc/helpers@0.5.13))(esbuild@0.19.12)(webpack-cli@5.1.4))
       tailwind-merge:
         specifier: ^2.2.0
         version: 2.5.4
@@ -2450,6 +2459,9 @@ packages:
   '@nrwl/js@19.8.8':
     resolution: {integrity: sha512-k9DtDoTiBzPvUSij+Wa35kkawaIZh36ErKm4ZL1sGkaBdsQ8uKVjyO8n+iGjj5GftBsh01prpCgom9n1qrtPaw==}
 
+  '@nrwl/nx-cloud@19.1.0':
+    resolution: {integrity: sha512-krngXVPfX0Zf6+zJDtcI59/Pt3JfcMPMZ9C/+/x6rvz4WGgyv1s0MI4crEUM0Lx5ZpS4QI0WNDCFVQSfGEBXUg==}
+
   '@nrwl/tao@19.8.8':
     resolution: {integrity: sha512-TJ6NoI7pbdov8v/+QzW8toDLH1u2DNCMvwhNOx29bBPG0ycugmR+g2EqixujBgM1BeBQN99Fqi1ZR/ZOuHkemQ==}
     hasBin: true
@@ -4451,6 +4463,10 @@ packages:
     resolution: {integrity: sha512-8NHi73otpWsZGBSZwwknTXS5pqMOrk9+Ssrna8xCaxkzEpU9OTf9R5ArQGVw03//Zmk9MOwLPng9WwndvpAJ5g==}
     engines: {node: '>=12'}
 
+  dotenv@10.0.0:
+    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
+    engines: {node: '>=10'}
+
   dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
@@ -4986,6 +5002,10 @@ packages:
   fs-extra@10.1.0:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
     engines: {node: '>=12'}
+
+  fs-extra@11.2.0:
+    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
+    engines: {node: '>=14.14'}
 
   fs-extra@8.1.0:
     resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
@@ -6347,6 +6367,10 @@ packages:
   nwsapi@2.2.13:
     resolution: {integrity: sha512-cTGB9ptp9dY9A5VbMSe7fQBcl/tt22Vcqdq8+eN93rblOuE0aCFu4aZ2vMwct/2t+lFnosm8RkQW1I0Omb1UtQ==}
 
+  nx-cloud@19.1.0:
+    resolution: {integrity: sha512-f24vd5/57/MFSXNMfkerdDiK0EvScGOKO71iOWgJNgI1xVweDRmOA/EfjnPMRd5m+pnoPs/4A7DzuwSW0jZVyw==}
+    hasBin: true
+
   nx@19.8.8:
     resolution: {integrity: sha512-Qvxy87uX8/Mre+GgXn5+uf3ehMn1mqO35UwJChVGWbuKJUELqrwvDRPfWcXNfwKniBmUL89gtO18OOZigx8YCw==}
     hasBin: true
@@ -7614,6 +7638,12 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  swc-loader@0.2.6:
+    resolution: {integrity: sha512-9Zi9UP2YmDpgmQVbyOPJClY0dwf58JDyDMQ7uRc4krmc72twNI2fvlBWHLqVekBpPc7h5NJkGVT1zNDxFrqhvg==}
+    peerDependencies:
+      '@swc/core': ^1.2.147
+      webpack: '>=2'
 
   symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
@@ -11473,6 +11503,12 @@ snapshots:
       - typescript
       - verdaccio
 
+  '@nrwl/nx-cloud@19.1.0':
+    dependencies:
+      nx-cloud: 19.1.0
+    transitivePeerDependencies:
+      - debug
+
   '@nrwl/tao@19.8.8(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))':
     dependencies:
       nx: 19.8.8(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))
@@ -14220,6 +14256,8 @@ snapshots:
     dependencies:
       dotenv: 16.4.5
 
+  dotenv@10.0.0: {}
+
   dotenv@16.4.5: {}
 
   drizzle-kit@0.26.2:
@@ -14814,6 +14852,12 @@ snapshots:
   fs-constants@1.0.0: {}
 
   fs-extra@10.1.0:
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+
+  fs-extra@11.2.0:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
@@ -16482,6 +16526,21 @@ snapshots:
 
   nwsapi@2.2.13: {}
 
+  nx-cloud@19.1.0:
+    dependencies:
+      '@nrwl/nx-cloud': 19.1.0
+      axios: 1.7.7
+      chalk: 4.1.2
+      dotenv: 10.0.0
+      fs-extra: 11.2.0
+      ini: 4.1.3
+      node-machine-id: 1.1.12
+      open: 8.4.2
+      tar: 6.2.1
+      yargs-parser: 21.1.1
+    transitivePeerDependencies:
+      - debug
+
   nx@19.8.8(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)):
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.4
@@ -17860,6 +17919,12 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.1
+
+  swc-loader@0.2.6(@swc/core@1.5.29(@swc/helpers@0.5.13))(webpack@5.95.0(@swc/core@1.5.29(@swc/helpers@0.5.13))(esbuild@0.19.12)(webpack-cli@5.1.4)):
+    dependencies:
+      '@swc/core': 1.5.29(@swc/helpers@0.5.13)
+      '@swc/counter': 0.1.3
+      webpack: 5.95.0(@swc/core@1.5.29(@swc/helpers@0.5.13))(esbuild@0.19.12)(webpack-cli@5.1.4)
 
   symbol-observable@4.0.0: {}
 

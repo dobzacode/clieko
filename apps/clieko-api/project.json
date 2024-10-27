@@ -11,7 +11,7 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "clieko-api:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": true
       },
       "configurations": {
         "development": {

@@ -1,30 +1,18 @@
-import { defineConfig } from 'drizzle-kit';
+import dotenv from 'dotenv';
+import type { Config } from 'drizzle-kit';
 import { resolve } from 'path';
 
-import { Config } from './types';
-
-const baseConfig: Pick<Config, 'migrations'> & {
-  dialect: 'postgresql';
-} = {
-  dialect: 'postgresql',
-  migrations: {
-    prefix: 'timestamp',
-  },
-};
-
-export const createDatabaseConfig = (url: string): Config => {
-  return defineConfig({
-    ...baseConfig,
-    schema: resolve(__dirname, './schema.ts'),
-    out: resolve(__dirname, '../migrations'),
-    dbCredentials: {
-      url,
-    },
-  });
-};
-
-export default defineConfig({
-  ...baseConfig,
-  schema: './src/schema.ts',
-  out: './migrations',
+dotenv.config({
+  path: '.env',
 });
+
+export default {
+  schema: resolve(__dirname, './schema.ts'),
+  out: resolve(__dirname, '../migrations'),
+  dialect: 'postgresql',
+  dbCredentials: {
+    url: process.env.DATABASE_URL,
+  },
+  verbose: true,
+  strict: true,
+} satisfies Config;
