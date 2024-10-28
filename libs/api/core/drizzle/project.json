@@ -1,0 +1,39 @@
+{
+  "name": "drizzle",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/core/drizzle/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "db:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "drizzle-kit generate --config=./src/config.ts",
+        "cwd": "libs/api/core/drizzle"
+      }
+    },
+    "db:migrate": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "local",
+      "options": {
+        "command": "drizzle-kit migrate --config=./src/config.ts",
+        "cwd": "libs/api/core/drizzle"
+      },
+      "configurations": {
+        "local": {}
+      }
+    },
+
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/core/drizzle",
+        "tsConfig": "libs/api/core/drizzle/tsconfig.lib.json",
+        "packageJson": "libs/api/core/drizzle/package.json",
+        "main": "libs/api/core/drizzle/src/index.ts",
+        "assets": ["libs/api/core/drizzle/*.md"]
+      }
+    }
+  }
+}

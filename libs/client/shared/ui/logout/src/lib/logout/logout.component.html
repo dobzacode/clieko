@@ -1,0 +1,8 @@
+<button
+  hlmBtn
+  variant="secondary"
+  (click)="handleLogout()"
+  *ngIf="isAuthenticated$ | async"
+>
+  Déconnexion
+</button>

@@ -17,8 +17,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@clieko/drizzle": ["libs/drizzle/src/index.ts"],
-      "@spartan-ng/ui-button-helm": ["libs/spartan/ui-button-helm/src/index.ts"]
+      "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
+      "@clieko-workspace/header": ["libs/client/shared/ui/header/src/index.ts"],
+      "@clieko-workspace/login": ["libs/client/shared/ui/login/src/index.ts"],
+      "@clieko-workspace/logout": ["libs/client/shared/ui/logout/src/index.ts"],
+      "@client/features/admin": ["libs/client/features/admin/src/index.ts"],
+      "@client/features/callback": [
+        "libs/client/features/callback/src/index.ts"
+      ],
+      "@client/features/home": ["libs/client/features/home/src/index.ts"],
+      "@client/shared/ui/ui-button-helm": [
+        "libs/client/shared/ui/ui-button-helm/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
