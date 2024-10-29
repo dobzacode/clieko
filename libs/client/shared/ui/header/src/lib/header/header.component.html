@@ -1,4 +1,10 @@
-<header>
-  <lib-login-button></lib-login-button>
-  <lib-logout-button></lib-logout-button>
+<header class="flex justify-between items-center w-full py-md relative z-50">
+  <p class="heading-h2 font-medium">Clieko</p>
+  <div class="flex gap-sm">
+    <div class="contents" *ngIf="(isAuthenticated$ | async) === false">
+      <lib-login-button></lib-login-button>
+      <lib-signup-button></lib-signup-button>
+    </div>
+    <lib-logout-button *ngIf="isAuthenticated$ | async"></lib-logout-button>
+  </div>
 </header>

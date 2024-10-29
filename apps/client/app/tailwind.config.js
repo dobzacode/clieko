@@ -32,8 +32,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        poppins: ['var(--font-poppins)'],
-        lora: ['var(--font-lora)'],
+        inconsolata: ['Inconsolata'],
+        karla: ['Karla'],
       },
       borderRadius: {
         lg: '32px',

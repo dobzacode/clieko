@@ -12,7 +12,6 @@ import { HlmButtonDirective } from '@client/shared/ui/ui-button-helm';
 export class LogoutComponent {
   private auth = inject(AuthService);
   private doc = inject(DOCUMENT);
-  isAuthenticated$ = this.auth.isAuthenticated$;
 
   handleLogout(): void {
     this.auth.logout({
