@@ -5,26 +5,44 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "serve": {
-      "executor": "@nx/js:node",
-      "defaultConfiguration": "development",
-      "dependsOn": ["build"],
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "clieko-api:build",
-        "runBuildTargetDependencies": true
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/clieko-api",
+        "main": "apps/server/api/src/main.ts",
+        "tsConfig": "apps/server/api/tsconfig.app.json",
+        "assets": ["apps/server/api/src/assets"],
+        "isolatedConfig": true
       },
       "configurations": {
         "development": {
+          "webpackConfig": "apps/server/api/webpack-hmr.config.js"
+        },
+        "production": {
+          "webpackConfig": "apps/server/api/webpack.config.js",
+          "generatePackageJson": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "clieko-api:build"
+      },
+      "configurations": {
+        "development": {
+          "watch": true,
           "buildTarget": "clieko-api:build:development"
         },
         "production": {
           "buildTarget": "clieko-api:build:production"
         }
       }
-    },
-    "docker-build": {
-      "dependsOn": ["build"],
-      "command": "docker build -f apps/server/api/Dockerfile . -t clieko-api"
     }
   }
 }

@@ -10,7 +10,7 @@ export class AppService {
   ) {}
 
   async getFirstUser() {
-    const existingUser = await this.db.query.user.findFirst({});
+    const existingUser = await this.db.query.user.findFirst();
     return existingUser;
   }
 }

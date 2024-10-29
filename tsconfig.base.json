@@ -18,6 +18,9 @@
     "baseUrl": ".",
     "paths": {
       "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
+      "@clieko-workspace/authorization": [
+        "libs/api/core/authorization/src/index.ts"
+      ],
       "@clieko-workspace/header": ["libs/client/shared/ui/header/src/index.ts"],
       "@clieko-workspace/login": ["libs/client/shared/ui/login/src/index.ts"],
       "@clieko-workspace/logout": ["libs/client/shared/ui/logout/src/index.ts"],
