@@ -1,14 +1,16 @@
 import { DrizzleModule } from '@api/core/drizzle';
+
+import { UserModule } from '@api/user/feature';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AppLoggerMiddleware } from './logger.middleware';
 
 @Module({
-  imports: [DrizzleModule, ConfigModule.forRoot({ isGlobal: true })],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    DrizzleModule,
+    UserModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {

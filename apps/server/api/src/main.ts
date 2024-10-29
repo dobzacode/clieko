@@ -3,6 +3,7 @@
  * This is only a minimal backend to get started.
  */
 
+import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import helmet from 'helmet';
@@ -54,6 +55,8 @@ async function bootstrap() {
       },
     })
   );
+
+  app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(configService.get<string>('PORT'));
 

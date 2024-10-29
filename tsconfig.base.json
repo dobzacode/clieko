@@ -15,24 +15,35 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
+      "@api/core/authorization": ["libs/api/core/authorization/src/index.ts"],
       "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
-      "@clieko-workspace/authorization": [
-        "libs/api/core/authorization/src/index.ts"
+      "@api/user/data-access": ["libs/api/user/data-access-user/src/index.ts"],
+      "@api/user/feature": ["libs/api/user/feature-user/src/index.ts"],
+      "@clieko-workspace/interface-user": [
+        "libs/api/user/interface-user/src/index.ts"
       ],
-      "@clieko-workspace/header": ["libs/client/shared/ui/header/src/index.ts"],
-      "@clieko-workspace/landing": [
-        "libs/client/features/landing/src/index.ts"
-      ],
-      "@clieko-workspace/login": ["libs/client/shared/ui/login/src/index.ts"],
-      "@clieko-workspace/logout": ["libs/client/shared/ui/logout/src/index.ts"],
-      "@clieko-workspace/signup": ["libs/client/shared/ui/signup/src/index.ts"],
       "@client/features/admin": ["libs/client/features/admin/src/index.ts"],
       "@client/features/callback": [
         "libs/client/features/callback/src/index.ts"
       ],
       "@client/features/home": ["libs/client/features/home/src/index.ts"],
+      "@client/features/landing": ["libs/client/features/landing/src/index.ts"],
+      "@client/features/utils": ["libs/api/user/utils-user/src/index.ts"],
+      "@client/shared/ui/header": [
+        "libs/client/shared/ui/ui-header/src/index.ts"
+      ],
+      "@client/shared/ui/login": [
+        "libs/client/shared/ui/ui-button-login/src/index.ts"
+      ],
+      "@client/shared/ui/logout": [
+        "libs/client/shared/ui/ui-button-logout/src/index.ts"
+      ],
+      "@client/shared/ui/signup": [
+        "libs/client/shared/ui/ui-button-signup/src/index.ts"
+      ],
       "@client/shared/ui/ui-button-helm": [
         "libs/client/shared/ui/ui-button-helm/src/index.ts"
       ]

@@ -1,63 +1,73 @@
-const nx = require("@nx/eslint-plugin");
+const nx = require('@nx/eslint-plugin');
 
 module.exports = [
-    ...nx.configs["flat/base"],
-    ...nx.configs["flat/typescript"],
-    ...nx.configs["flat/javascript"],
-    {
-        ignores: ["**/dist"]
+  ...nx.configs['flat/base'],
+  ...nx.configs['flat/typescript'],
+  ...nx.configs['flat/javascript'],
+  {
+    ignores: ['**/dist'],
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          enforceBuildableLibDependency: true,
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
+          depConstraints: [
+            {
+              sourceTag: '*',
+              onlyDependOnLibsWithTags: ['*'],
+            },
+          ],
+        },
+      ],
     },
-    {
-        files: [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.js",
-            "**/*.jsx"
-        ],
-        rules: { "@nx/enforce-module-boundaries": [
-                "error",
-                {
-                    enforceBuildableLibDependency: true,
-                    allow: ["^.*/eslint(\\.base)?\\.config\\.[cm]?js$"],
-                    depConstraints: [{
-                            sourceTag: "*",
-                            onlyDependOnLibsWithTags: ["*"]
-                        }]
-                }
-            ] }
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    // Override or add rules here
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
-    {
-        files: [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.js",
-            "**/*.jsx"
-        ],
-        // Override or add rules here
-        rules: {}
+  },
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+      ],
     },
-{
-    files: ["**/*.json"],
-    rules: { "@nx/dependency-checks": [
-            "error",
-            { ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"] }
-        ] },
-    languageOptions: { parser: require("jsonc-eslint-parser") }
-},
-{
-    files: ["**/*.json"],
-    rules: { "@nx/dependency-checks": [
-            "error",
-            { ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"] }
-        ] },
-    languageOptions: { parser: require("jsonc-eslint-parser") }
-},
-{
-    files: ["**/*.json"],
-    rules: { "@nx/dependency-checks": [
-            "error",
-            { ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"] }
-        ] },
-    languageOptions: { parser: require("jsonc-eslint-parser") }
-},
+    languageOptions: { parser: require('jsonc-eslint-parser') },
+  },
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+      ],
+    },
+    languageOptions: { parser: require('jsonc-eslint-parser') },
+  },
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+      ],
+    },
+    languageOptions: { parser: require('jsonc-eslint-parser') },
+  },
 ];

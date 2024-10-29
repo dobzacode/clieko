@@ -15,7 +15,7 @@ describe('AppService', () => {
 
   describe('getFirstUser', () => {
     it('should return "Hello API"', () => {
-      expect(service.getFirstUser()).toEqual({ message: 'Hello API' });
+      expect(service).toEqual({ message: 'Hello API' });
     });
   });
 });

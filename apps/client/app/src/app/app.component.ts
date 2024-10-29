@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from '@clieko-workspace/header';
+import { HeaderComponent } from '@client/shared/ui/header';
 import { HlmButtonDirective } from '@client/shared/ui/ui-button-helm';
 
 @Component({
