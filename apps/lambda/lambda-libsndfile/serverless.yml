@@ -1,0 +1,14 @@
+service: libsndfile-layer
+
+frameworkVersion: '4.4.7'
+
+provider:
+  name: aws
+  region: eu-central-1
+
+layers:
+  libsndfilePython312:
+    path: layer
+    compatibleRuntimes:
+      - python3.11
+    description: 'Lambda layer for libsndfile library'

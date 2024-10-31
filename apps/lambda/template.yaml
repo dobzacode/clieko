@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: A simple Lambda function with a layer
+
+Resources:
+  HelloNameFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      Timeout: 160
+      MemorySize: 10000
+      Layers:
+        - arn:aws:lambda:eu-central-1:182399718556:layer:ffmpegPython312:1
+        - arn:aws:lambda:eu-central-1:182399718556:layer:libsndfilePython312:11

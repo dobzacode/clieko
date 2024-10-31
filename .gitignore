@@ -17,6 +17,11 @@ node_modules
 .settings/
 *.sublime-workspace
 
+.aws-sam
+
+venv
+events
+
 .env*  
 !.env.example
 *.db*
