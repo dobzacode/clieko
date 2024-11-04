@@ -1,0 +1,52 @@
+service: doubledrop-dev-mp3process
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: eu-central-1
+  ecr:
+    images:
+      appimage:
+        path: ./
+
+functions:
+  mp3Processor:
+    name: doubledrop-dev-mp3process
+    image: 182399718556.dkr.ecr.eu-central-1.amazonaws.com/doubledrop-dev-mp3process:latest
+    timeout: 30
+    memorySize: 10000
+    description: 'Doubledrop lambda function for mp3 processing'
+    role: doubledropdevmp3processlambda
+    events:
+      - sqs:
+          arn: arn:aws:sqs:eu-central-1:182399718556:doubledrop-dev-eu-central-1-getmp3-sqs
+
+resources:
+  Resources:
+    doubledropdevmp3processlambda:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service: lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: doubledrop-dev-getmp3-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Sid: VisualEditor0
+                  Effect: Allow
+                  Action:
+                    - s3:GetObject
+                  Resource: arn:aws:s3:::doubledrop-prod--eu-central-1-music/*
+                - Sid: AllowReceiveMessagesFromSQS
+                  Effect: Allow
+                  Action:
+                    - sqs:ReceiveMessage
+                    - sqs:DeleteMessage
+                    - sqs:GetQueueAttributes
+                  Resource: arn:aws:sqs:eu-central-1:182399718556:doubledrop-dev-eu-central-1-getmp3-sqs

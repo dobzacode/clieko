@@ -12,7 +12,7 @@
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
-          "ImageUri": "182399718556.dkr.ecr.eu-central-1.amazonaws.com/doubledrop-dev-getmp3@sha256:2a7a0b17956693d2a57be6174336e48b0751c224be09d88d4136797cb9f09583"
+          "ImageUri": "182399718556.dkr.ecr.eu-central-1.amazonaws.com/doubledrop-dev-getmp3@sha256:b23c1abdcf6f7e405b4ef78e84df71f017031a49946f18a24fac401c408c66c3"
         },
         "PackageType": "Image",
         "FunctionName": "doubledrop-dev-getmp3",
@@ -30,14 +30,14 @@
         "doubledropdevgetmp3lambda"
       ]
     },
-    "DoubledropDashdevDashgetmp3LambdaVersionZl7dhhE8JGRnLizsxCBOYtakeYHt9pUgCkkHEbQ": {
+    "DoubledropDashdevDashgetmp3LambdaVersionB93dbILlEtqlUop19OSOaJ253VAE2sw3EXTRDVzYFuk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DoubledropDashdevDashgetmp3LambdaFunction"
         },
-        "CodeSha256": "2a7a0b17956693d2a57be6174336e48b0751c224be09d88d4136797cb9f09583"
+        "CodeSha256": "b23c1abdcf6f7e405b4ef78e84df71f017031a49946f18a24fac401c408c66c3"
       }
     },
     "doubledropdevgetmp3lambda": {
@@ -86,7 +86,7 @@
     "DoubledropDashdevDashgetmp3LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DoubledropDashdevDashgetmp3LambdaVersionZl7dhhE8JGRnLizsxCBOYtakeYHt9pUgCkkHEbQ"
+        "Ref": "DoubledropDashdevDashgetmp3LambdaVersionB93dbILlEtqlUop19OSOaJ253VAE2sw3EXTRDVzYFuk"
       },
       "Export": {
         "Name": "sls-doubledrop-dev-getmp3-dev-DoubledropDashdevDashgetmp3LambdaFunctionQualifiedArn"
