@@ -1,5 +1,5 @@
 {
-  "name": "data-access-user",
+  "name": "client-shared-data-access-user",
   "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/client/shared/data-access/data-access-user/src",
   "prefix": "lib",

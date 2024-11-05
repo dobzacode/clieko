@@ -1,5 +1,5 @@
 {
-  "name": "authorization",
+  "name": "api-core-authorization",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/core/authorization/src",
   "projectType": "library",

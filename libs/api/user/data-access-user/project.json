@@ -1,5 +1,5 @@
 {
-  "name": "data-access",
+  "name": "api-data-access-user",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/user/data-access-user/src",
   "projectType": "library",

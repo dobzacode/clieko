@@ -1,5 +1,5 @@
 {
-  "name": "drizzle",
+  "name": "api-core-drizzle",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/core/drizzle/src",
   "projectType": "library",

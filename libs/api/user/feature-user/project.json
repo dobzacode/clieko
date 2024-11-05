@@ -1,5 +1,5 @@
 {
-  "name": "feature",
+  "name": "api-feature-user",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/user/feature-user/src",
   "projectType": "library",

@@ -1,6 +1,7 @@
 import * as drizzle from '@api/core/drizzle';
 import { schema } from '@api/core/drizzle';
-import { CreateUserDto } from '@doubledrop-workspace/interface-user';
+import { CreateUserDto } from '@api/user/interface-user';
+
 import { Inject, Injectable } from '@nestjs/common';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 

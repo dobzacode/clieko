@@ -1,0 +1,9 @@
+{
+  "name": "api-interface-track",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/track/interface-track/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project interface-track --web",
+  "targets": {}
+}

@@ -1,6 +1,6 @@
 import { UserService } from '@api/user/data-access';
-import { CreateUserGuard } from '@client/features/utils';
-import { CreateUserDto } from '@doubledrop-workspace/interface-user';
+import { CreateUserDto } from '@api/user/interface-user';
+import { CreateUserGuard } from '@api/user/utils-user';
 import { Controller, Post, Req, UseGuards } from '@nestjs/common';
 
 @Controller('user')

@@ -1,5 +1,5 @@
 {
-  "name": "interface-user",
+  "name": "api-interface-user",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/user/interface-user/src",
   "prefix": "lib",

@@ -1,0 +1,9 @@
+{
+  "name": "api-utils-track",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/track/utils-track/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project utils-track --web",
+  "targets": {}
+}

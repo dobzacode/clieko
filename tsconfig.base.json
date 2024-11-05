@@ -20,18 +20,35 @@
     "paths": {
       "@api/core/authorization": ["libs/api/core/authorization/src/index.ts"],
       "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
+      "@api/track/data-access-track": [
+        "libs/api/track/data-access-track/src/index.ts"
+      ],
+      "@api/track/feature-track": ["libs/api/track/feature-track/src/index.ts"],
+      "@api/track/interface-track": [
+        "libs/api/track/interface-track/src/index.ts"
+      ],
+      "@api/track/utils-track": ["libs/api/track/utils-track/src/index.ts"],
       "@api/user/data-access": ["libs/api/user/data-access-user/src/index.ts"],
       "@api/user/feature": ["libs/api/user/feature-user/src/index.ts"],
-      "@doubledrop-workspace/interface-user": [
-        "libs/api/user/interface-user/src/index.ts"
+      "@api/user/interface-user": ["libs/api/user/interface-user/src/index.ts"],
+      "@api/user/utils-user": ["libs/api/user/utils-user/src/index.ts"],
+      "@client/home": ["libs/client/home/src/index.ts"],
+      "@client/landing": ["libs/client/landing/src/index.ts"],
+      "@client/mixer/track/get-mp3": [
+        "libs/client/mixer/track/get-mp3/src/index.ts"
       ],
-      "@client/features/admin": ["libs/client/features/admin/src/index.ts"],
-      "@client/features/callback": [
-        "libs/client/features/callback/src/index.ts"
+      "@client/shared/data-access/data-access-track": [
+        "libs/client/shared/data-access/data-access-track/src/index.ts"
       ],
-      "@client/features/home": ["libs/client/features/home/src/index.ts"],
-      "@client/features/landing": ["libs/client/features/landing/src/index.ts"],
-      "@client/features/utils": ["libs/api/user/utils-user/src/index.ts"],
+      "@client/shared/data-access/data-access-user": [
+        "libs/client/shared/data-access/data-access-user/src/index.ts"
+      ],
+      "@client/shared/ui/ui-input-helm": [
+        "libs/client/shared/ui/ui-input-helm/src/index.ts"
+      ],
+      "@client/shared/ui/ui-label-helm": [
+        "libs/client/shared/ui/ui-label-helm/src/index.ts"
+      ],
       "@client/shared/ui/header": [
         "libs/client/shared/ui/ui-header/src/index.ts"
       ],
