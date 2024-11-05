@@ -22,7 +22,7 @@
       "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
       "@api/user/data-access": ["libs/api/user/data-access-user/src/index.ts"],
       "@api/user/feature": ["libs/api/user/feature-user/src/index.ts"],
-      "@clieko-workspace/interface-user": [
+      "@doubledrop-workspace/interface-user": [
         "libs/api/user/interface-user/src/index.ts"
       ],
       "@client/features/admin": ["libs/client/features/admin/src/index.ts"],

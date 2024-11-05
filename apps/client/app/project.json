@@ -1,5 +1,5 @@
 {
-  "name": "clieko-app",
+  "name": "doubledrop-app",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "clieko-app:build:production"
+          "buildTarget": "doubledrop-app:build:production"
         },
         "development": {
-          "buildTarget": "clieko-app:build:development"
+          "buildTarget": "doubledrop-app:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "clieko-app:build"
+        "buildTarget": "doubledrop-app:build"
       }
     },
     "lint": {
@@ -83,7 +83,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "clieko-app:build",
+        "buildTarget": "doubledrop-app:build",
         "port": 4200,
         "spa": true
       }

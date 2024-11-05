@@ -14,13 +14,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome clieko-app'
+      'Welcome doubledrop-app'
     );
   });
 
-  it(`should have as title 'clieko-app'`, () => {
+  it(`should have as title 'doubledrop-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('clieko-app');
+    expect(app.title).toEqual('doubledrop-app');
   });
 });

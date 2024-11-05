@@ -1,6 +1,6 @@
 import { UserService } from '@api/user/data-access';
-import { CreateUserDto } from '@clieko-workspace/interface-user';
 import { CreateUserGuard } from '@client/features/utils';
+import { CreateUserDto } from '@doubledrop-workspace/interface-user';
 import { Controller, Post, Req, UseGuards } from '@nestjs/common';
 
 @Controller('user')

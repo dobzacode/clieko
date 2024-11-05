@@ -7,10 +7,10 @@ export default defineConfig({
     ...nxE2EPreset(__filename, {
       cypressDir: 'src',
       webServerCommands: {
-        default: 'pnpm exec nx run clieko-app:serve',
-        production: 'pnpm exec nx run clieko-app:serve-static',
+        default: 'pnpm exec nx run doubledrop-app:serve',
+        production: 'pnpm exec nx run doubledrop-app:serve-static',
       },
-      ciWebServerCommand: 'pnpm exec nx run clieko-app:serve-static',
+      ciWebServerCommand: 'pnpm exec nx run doubledrop-app:serve-static',
       ciBaseUrl: 'http://localhost:4200',
     }),
     baseUrl: 'http://localhost:4200',

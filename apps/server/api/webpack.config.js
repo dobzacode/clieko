@@ -3,7 +3,7 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../../dist/apps/clieko-api'),
+    path: join(__dirname, '../../../dist/apps/doubledrop-api'),
   },
   plugins: [
     new NxAppWebpackPlugin({

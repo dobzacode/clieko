@@ -1,0 +1,32 @@
+<main class="flex flex-col gap-lg items-center">
+  <section class="card inner-section-gap flex flex-col">
+    <fieldset class="flex gap-sm">
+      <label class="w-1/2" hlmLabel>
+        Email
+        <input
+          [defaultValue]="user?.email"
+          hlmInput
+          placeholder="jean.dupont@gmail.com"
+        />
+      </label>
+      <label class="w-1/2" hlmLabel>
+        Nom d'utilisateur
+        <input
+          [defaultValue]="user?.username"
+          hlmInput
+          placeholder="jean.dupont"
+        />
+      </label>
+    </fieldset>
+    <fieldset class="flex gap-sm">
+      <label class="w-1/2" hlmLabel>
+        Nom
+        <input [defaultValue]="user?.firstname" hlmInput placeholder="Jean" />
+      </label>
+      <label class="w-1/2" hlmLabel>
+        Prénom
+        <input [defaultValue]="user?.lastname" hlmInput placeholder="Dupont" />
+      </label>
+    </fieldset>
+  </section>
+</main>

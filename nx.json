@@ -39,7 +39,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/clieko-api-e2e/**/*"]
+      "exclude": ["apps/doubledrop-api-e2e/**/*"]
     },
     {
       "plugin": "@nx/cypress/plugin",

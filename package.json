@@ -1,9 +1,9 @@
 {
-  "name": "@clieko-workspace/source",
+  "name": "@doubledrop-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:front-back": "nx run-many --target=serve --projects=clieko-app,clieko-api"
+    "dev:front-back": "nx run-many --target=serve --projects=doubledrop-app,doubledrop-api"
   },
   "private": true,
   "dependencies": {

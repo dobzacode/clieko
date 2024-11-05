@@ -1,5 +1,5 @@
 {
-  "name": "clieko-api",
+  "name": "doubledrop-api",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/server/api/src",
   "projectType": "application",
@@ -12,7 +12,7 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/clieko-api",
+        "outputPath": "dist/doubledrop-api",
         "main": "apps/server/api/src/main.ts",
         "tsConfig": "apps/server/api/tsconfig.app.json",
         "assets": ["apps/server/api/src/assets"],
@@ -32,15 +32,15 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "clieko-api:build"
+        "buildTarget": "doubledrop-api:build"
       },
       "configurations": {
         "development": {
           "watch": true,
-          "buildTarget": "clieko-api:build:development"
+          "buildTarget": "doubledrop-api:build:development"
         },
         "production": {
-          "buildTarget": "clieko-api:build:production"
+          "buildTarget": "doubledrop-api:build:production"
         }
       }
     }

@@ -1,5 +1,5 @@
 export default {
-  displayName: 'clieko-api',
+  displayName: 'doubledrop-api',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
