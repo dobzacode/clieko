@@ -1,9 +1,38 @@
 {
-  "id": "3fc53ee3-c2d9-4d12-8045-75155eb84b07",
-  "prevId": "26774873-5094-4037-ae67-af3b70986110",
+  "id": "f22684c2-12d1-42d8-b51c-e79c3357527e",
+  "prevId": "3fc53ee3-c2d9-4d12-8045-75155eb84b07",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.track": {
+      "name": "track",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "bpm": {
+          "name": "bpm",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "s3_key": {
+          "name": "s3_key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
     "public.user": {
       "name": "user",
       "schema": "",
@@ -42,15 +71,7 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "user_username_unique": {
-          "name": "user_username_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "username"
-          ]
-        }
-      },
+      "uniqueConstraints": {},
       "checkConstraints": {}
     }
   },

@@ -7,3 +7,9 @@ export const user = pgTable('user', {
   firstname: text('first_name'),
   username: text('username'),
 });
+
+export const track = pgTable('track', {
+  id: text('id').primaryKey(),
+  bpm: text('bpm').notNull(),
+  s3_key: text('s3_key').notNull(),
+});
