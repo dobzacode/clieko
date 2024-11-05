@@ -16,6 +16,16 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
+.serverless
+serverless.yml
+
+package
+*.zip
+
+.aws-sam
+
+venv
+events
 
 .env*  
 !.env.example
