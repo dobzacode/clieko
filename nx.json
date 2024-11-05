@@ -19,6 +19,7 @@
   },
   "nxCloudId": "671d3f4cd4ea3c25c46da496",
   "plugins": [
+    { "plugin": "@nxlv/python" },
     {
       "plugin": "@nx/webpack/plugin",
       "options": {

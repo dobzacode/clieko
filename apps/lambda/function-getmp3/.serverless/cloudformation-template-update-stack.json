@@ -1,0 +1,96 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application",
+  "Resources": {
+    "DoubledropDashdevDashgetmp3LogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/doubledrop-dev-getmp3"
+      }
+    },
+    "DoubledropDashdevDashgetmp3LambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "ImageUri": "182399718556.dkr.ecr.eu-central-1.amazonaws.com/doubledrop-dev-getmp3@sha256:b23c1abdcf6f7e405b4ef78e84df71f017031a49946f18a24fac401c408c66c3"
+        },
+        "PackageType": "Image",
+        "FunctionName": "doubledrop-dev-getmp3",
+        "MemorySize": 1024,
+        "Timeout": 15,
+        "Role": {
+          "Fn::GetAtt": [
+            "doubledropdevgetmp3lambda",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "DoubledropDashdevDashgetmp3LogGroup",
+        "doubledropdevgetmp3lambda"
+      ]
+    },
+    "DoubledropDashdevDashgetmp3LambdaVersionB93dbILlEtqlUop19OSOaJ253VAE2sw3EXTRDVzYFuk": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DoubledropDashdevDashgetmp3LambdaFunction"
+        },
+        "CodeSha256": "b23c1abdcf6f7e405b4ef78e84df71f017031a49946f18a24fac401c408c66c3"
+      }
+    },
+    "doubledropdevgetmp3lambda": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": "doubledrop-dev-getmp3-policy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Sid": "VisualEditor0",
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:PutObject"
+                  ],
+                  "Resource": "arn:aws:s3:::doubledrop-prod--eu-central-1-music/*"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "ServerlessDeploymentBucketName": {
+      "Value": "serverless-framework-deployments-eu-central-1-c27d3c6b-b8d1",
+      "Export": {
+        "Name": "sls-doubledrop-dev-getmp3-dev-ServerlessDeploymentBucketName"
+      }
+    },
+    "DoubledropDashdevDashgetmp3LambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DoubledropDashdevDashgetmp3LambdaVersionB93dbILlEtqlUop19OSOaJ253VAE2sw3EXTRDVzYFuk"
+      },
+      "Export": {
+        "Name": "sls-doubledrop-dev-getmp3-dev-DoubledropDashdevDashgetmp3LambdaFunctionQualifiedArn"
+      }
+    }
+  }
+}

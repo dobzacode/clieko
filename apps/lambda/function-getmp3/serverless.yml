@@ -1,0 +1,42 @@
+service: doubledrop-dev-getmp3
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: eu-central-1
+  ecr:
+    images:
+      appimage:
+        path: ./
+
+functions:
+  doubledrop-dev-getmp3:
+    image: 182399718556.dkr.ecr.eu-central-1.amazonaws.com/doubledrop-dev-getmp3:latest
+    timeout: 15
+    memorySize: 1024
+    name: doubledrop-dev-getmp3
+    role: doubledropdevgetmp3lambda
+
+resources:
+  Resources:
+    doubledropdevgetmp3lambda:
+      Type: AWS::IAM::Role
+
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service: lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: doubledrop-dev-getmp3-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Sid: VisualEditor0
+                  Effect: Allow
+                  Action:
+                    - s3:PutObject
+                  Resource: arn:aws:s3:::doubledrop-prod--eu-central-1-music/*

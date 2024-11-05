@@ -27,6 +27,11 @@ package
 venv
 events
 
+.aws-sam
+
+venv
+events
+
 .env*  
 !.env.example
 *.db*
