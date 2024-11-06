@@ -9,7 +9,9 @@ export class TrackController {
 
   @UseGuards(AuthorizationGuard)
   @Get()
-  getTrack(@Query('url') trackUrl: string) {
-    return this.trackService.getTrack(trackUrl);
+  async getTrack(@Query('url') trackUrl: string) {
+    const result = await this.trackService.getTrack(trackUrl);
+    const data = await result.json();
+    return data;
   }
 }

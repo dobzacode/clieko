@@ -11,7 +11,9 @@ export class TrackService {
 
   constructor(private http: HttpClient) {}
 
-  getTrack(url: string): Observable<string> {
-    return this.http.get<string>(`${this.baseUrl}/track?url=${url}`);
+  getTrack(url: string): Observable<{ presigned_url: string }> {
+    return this.http.get<{ presigned_url: string }>(
+      `${this.baseUrl}/track?url=${url}`
+    );
   }
 }

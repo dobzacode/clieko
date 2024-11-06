@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { LoginComponent } from '@client/shared/ui/login';
 import { LogoutComponent } from '@client/shared/ui/logout';
@@ -8,7 +9,13 @@ import { SignupComponent } from '@client/shared/ui/signup';
 @Component({
   selector: 'lib-header',
   standalone: true,
-  imports: [CommonModule, LoginComponent, LogoutComponent, SignupComponent],
+  imports: [
+    CommonModule,
+    LoginComponent,
+    LogoutComponent,
+    SignupComponent,
+    RouterLink,
+  ],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

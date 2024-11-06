@@ -128,6 +128,10 @@
   .inner-section-gap {
     @apply gap-sm mobile-lg:gap-sm tablet:gap-md laptop-sm:gap-md laptop:gap-md;
   }
+
+  .main {
+    @apply min-h-[calc(100vh-11.7rem)] flex flex-col items-center justify-center self-center;
+  }
 }
 
 @tailwind utilities;

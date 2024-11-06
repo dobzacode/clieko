@@ -10,9 +10,9 @@ export class TrackService {
   ) {}
 
   async getTrack(trackUrl: string) {
-    const presignedUrl = await fetch(
+    const res = await fetch(
       `https://oaic34s37b.execute-api.eu-central-1.amazonaws.com/track?url=${trackUrl}`
     );
-    return presignedUrl;
+    return res;
   }
 }

@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   host: {
-    class:
-      'min-h-[calc(100vh-11.7rem)] flex flex-col items-center justify-center self-center',
+    class: 'main',
   },
   templateUrl: './landing.component.html',
 })

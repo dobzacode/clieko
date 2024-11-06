@@ -4,6 +4,7 @@ import uuid
 import boto3
 import yt_dlp
 
+s3_client = boto3.client('s3')
 
 def download_audio(link):
     output_filename = '/tmp/audio.mp3'
@@ -18,8 +19,6 @@ def download_audio(link):
 
 
 def upload_to_s3(file_path, bucket_name, object_name):
-    s3_client = boto3.client('s3')
-
     try:
         with open(file_path, 'rb') as f:
             s3_client.upload_fileobj(f, bucket_name, object_name)
@@ -32,7 +31,6 @@ def upload_to_s3(file_path, bucket_name, object_name):
 
 
 def create_presigned_url(bucket_name, object_name, expiration=3600):
-    s3_client = boto3.client('s3')
     try:
         response = s3_client.generate_presigned_url('get_object',
                                                     Params={'Bucket': bucket_name, 'Key': object_name},
@@ -42,7 +40,6 @@ def create_presigned_url(bucket_name, object_name, expiration=3600):
         return {
             'error': str(e)
         }
-    
     return response
 
 

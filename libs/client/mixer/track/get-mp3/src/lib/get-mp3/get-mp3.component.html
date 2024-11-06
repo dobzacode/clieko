@@ -1,1 +1,9 @@
-<p>get-mp3 works!</p>
+<label hlmLabel for="soundCloudUrl">SoundCloud URL:</label>
+<input hlmInput id="soundCloudUrl" type="text" [(ngModel)]="soundCloudUrl" />
+
+<button (click)="fetchPresignedUrl()">Get Presigned URL</button>
+
+<audio *ngIf="presignedUrl" preload="auto" controls>
+  <source src="{{ presignedUrl }}" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>

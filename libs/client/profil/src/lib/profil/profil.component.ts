@@ -1,5 +1,5 @@
-import { HlmLabelDirective } from '@@client/shared/ui/ui-label-helm';
 import { Component, OnInit, inject } from '@angular/core';
+import { HlmLabelDirective } from '@client/shared/ui/ui-label-helm';
 
 import { User } from '@api/user/interface-user';
 import { AuthService } from '@auth0/auth0-angular';
