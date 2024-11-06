@@ -18,6 +18,9 @@
     "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
+      "@@client/shared/ui/ui-label-helm": [
+        "libs/client/shared/ui/ui-label-helm/src/index.ts"
+      ],
       "@api/core/authorization": ["libs/api/core/authorization/src/index.ts"],
       "@api/core/drizzle": ["libs/api/core/drizzle/src/index.ts"],
       "@api/track/data-access-track": [
@@ -37,17 +40,12 @@
       "@client/mixer/track/get-mp3": [
         "libs/client/mixer/track/get-mp3/src/index.ts"
       ],
+      "@client/profil": ["libs/client/profil/src/index.ts"],
       "@client/shared/data-access/data-access-track": [
         "libs/client/shared/data-access/data-access-track/src/index.ts"
       ],
       "@client/shared/data-access/data-access-user": [
         "libs/client/shared/data-access/data-access-user/src/index.ts"
-      ],
-      "@client/shared/ui/ui-input-helm": [
-        "libs/client/shared/ui/ui-input-helm/src/index.ts"
-      ],
-      "@client/shared/ui/ui-label-helm": [
-        "libs/client/shared/ui/ui-label-helm/src/index.ts"
       ],
       "@client/shared/ui/header": [
         "libs/client/shared/ui/ui-header/src/index.ts"
@@ -63,6 +61,12 @@
       ],
       "@client/shared/ui/ui-button-helm": [
         "libs/client/shared/ui/ui-button-helm/src/index.ts"
+      ],
+      "@client/shared/ui/ui-input-helm": [
+        "libs/client/shared/ui/ui-input-helm/src/index.ts"
+      ],
+      "@client/shared/ui/ui-formfield-helm": [
+        "libs/client/shared/ui/ui-formfield-helm/src/index.ts"
       ]
     }
   },

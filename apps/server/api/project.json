@@ -15,8 +15,7 @@
         "outputPath": "dist/doubledrop-api",
         "main": "apps/server/api/src/main.ts",
         "tsConfig": "apps/server/api/tsconfig.app.json",
-        "assets": ["apps/server/api/src/assets"],
-        "isolatedConfig": true
+        "assets": ["apps/server/api/src/assets"]
       },
       "configurations": {
         "development": {

@@ -1,10 +1,10 @@
+import { HlmLabelDirective } from '@@client/shared/ui/ui-label-helm';
 import { Component, OnInit, inject } from '@angular/core';
 
 import { User } from '@api/user/interface-user';
 import { AuthService } from '@auth0/auth0-angular';
 import { UserService } from '@client/shared/data-access/data-access-user';
 import { HlmInputDirective } from '@client/shared/ui/ui-input-helm';
-import { HlmLabelDirective } from '@client/shared/ui/ui-label-helm';
 
 import { first, firstValueFrom } from 'rxjs';
 

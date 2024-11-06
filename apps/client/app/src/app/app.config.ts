@@ -24,6 +24,12 @@ export const appConfig: ApplicationConfig = {
               authorizationParams: { audience: environment.auth.audience },
             },
           },
+          {
+            uri: `${environment.apiServerUrl}/api/*`,
+            tokenOptions: {
+              authorizationParams: { audience: environment.auth.audience },
+            },
+          },
         ],
       },
     }),

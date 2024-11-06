@@ -126,7 +126,7 @@
   }
 
   .inner-section-gap {
-    @apply gap-md mobile-lg:gap-lg tablet:gap-xl laptop-sm:gap-2xl laptop:gap-4xl;
+    @apply gap-sm mobile-lg:gap-sm tablet:gap-md laptop-sm:gap-md laptop:gap-md;
   }
 }
 
